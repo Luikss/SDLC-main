@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        code {
+            background-color: black;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+    </style>
+    <title>Git and Github</title>
+</head>
+<body>
+    <button class="accordion">Git</button>
+    <div class="panel">
+        <div>
+            <h1>Repositories, Branches & Commits</h1>
+
+            <h2>Repository</h2>
+            <p>The location where your code history is stored.</p>
+            <h2>Branch</h2>
+            <p>"Folder" within the repository containing commits.</p>
+            <h2>Commits</h2>
+            <p>Different stages of your code inside a branch.</p>
+        </div>
+        <hr>
+        <div>
+            <h1>Git commands</h1>
+
+            <code>git init</code>
+            <p>Initializes or reinitializes a Git repository in the current folder.</p>
+            <code>git status</code>
+            <p>Shows the status of your working tree.</p>
+            <code>git add .</code>
+            <code>git add single_file.txt</code>
+            <code>git add my_folder</code>
+            <code>git add *.rb</code>
+            <p>Updates the index with the content found in your working tree thus making the content staged for the next commit. An index is like a snapshot of your working tree. When you perform a commit, this snapshot is utilized. Therefore, before doing a commit you should perform git add for any files that were modified or created.</p>
+            <code>git commit -m "My first commit"</code>
+            <p>All the staged files will be commited and added to the project history.</p>
+            <code>git branch</code>
+            <p>View all branches in your project.</p>
+            <code>git log</code>
+            <p>Displays commit logs and allows you to see what changes were made, when, and by whom.</p>
+            <code>git checkout name</code>
+            <p>Switch to a different branch and the corresponding version of the project will be loaded automatically for you.</p>
+            <code>git checkout -b new_name</code>
+            <p>Create a new branch based on the currently chosen one and also switch to it.</p>
+            <code>git checkout -- .</code>
+            <p>Reverts current changes.</p>
+            <code>git checkout -b new-branch</code>
+            <p>Switches to a new branch called "new-branch"</p>
+            <code>git reset --hard 123</code>
+            <p>Resets to code version 123</p>
+            <code>git merge</code>
+            <p>Joins development histories together. In other words, it allows you to take changes from one branch and incorporate it into another branch.</p>
+            <code>git push</code>
+            <p>Pushes commited changes to repository.</p>
+            <code>git pull</code>
+            <p>Grab changes from the remote repository and apply them locally.</p>
+        </div>
+    </div>
+
+    <button class="accordion">Github</button>
+    <div class="panel">
+        <div>
+            <h1></h1>
+            <p></p>
+    
+            <h2></h2>
+            <code></code>
+            <p></p>
+        </div>
+        <hr>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
